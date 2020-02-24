@@ -1,0 +1,58 @@
+---
+title: "GlitterApp Presentation"
+author: "Rinnette N. Ramdhanie"
+date: "24 February 2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(ggplot2)
+```
+
+## Glitters Diamond Brokerage (GDB) presents GlitterApp
+
+GlitterApp calculates a minimum price that will be accepted by GDB given 
+
+- Carat
+- Cut
+- Colour
+- Clarity
+
+## How does GlitterApp work?
+
+- Enter carat, cut, colour and clarity
+- Send resulting price to the email address provided
+- A represntative of GDB will contact you to make arrangements to authenticate the stone
+- Once authenticated, payment guaranteed in 24 hours
+
+
+## Advantages of using GlitterApp
+
+- Quickly get the price you will be offered with no waiting or delays
+- Price provided is the minumum price guaranteed
+- Prices are negotiable
+- Payment is made within 24 hours of the stone being authenticated
+
+
+## Information to be entered
+
+**Carat**  
+The minimum carats that can be entered is `r min(diamonds$carat)` and the maximum is `r max(diamonds$carat)`
+
+**Cut**  
+The Cut values are `r unique(diamonds$cut)` where Ideal is the best and Fair is the worst.
+
+**Colour**  
+Colours range from `r unique(diamonds[order(diamonds$color), ]$color)` where
+
+- D, E and F are *colourless* with D being the best
+- G, H, I are J are *near colourless* with J being the worst 
+
+**Clarity**  
+Clarity takes the values `r unique(diamonds$clarity)`
+
+
+
+## Where to find GlitterApp
+Link to GlitterApp: www.glitters.com/GlitterApp
