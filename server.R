@@ -1,5 +1,4 @@
 #
-#
 # This is the server logic for the Glitters application. 
 #
 
@@ -18,14 +17,9 @@ library(shiny)
                 colourInput = input$selectColour
                 clarityInput = input$selectClarity
                 pred = predict(mod, newdata = data.frame(carat = caratInput, cut = cutInput, color = colourInput,
-                                                  clarity = clarityInput))
+                                                  clarity = clarityInput)) * 0.75
                 ifelse(pred < 0, 0, pred)
             })
-            
-            
-           #output$text1 <- renderText({ paste("hello input is","<font color=\"#FF0000\"><b>", input$n, "</b></font>") })
-            
-            
             
             output$carat = renderText({
                 input$sliderCarat
@@ -45,9 +39,7 @@ library(shiny)
             
             
             output$predPrice = renderText({
-                predmod()
-                
-                
-            })
+                prettyNum(predmod(), big.mark=",")
+            })   
     
     })

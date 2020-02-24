@@ -2,7 +2,9 @@
 title: "GlitterApp Presentation"
 author: "Rinnette N. Ramdhanie"
 date: "24 February 2020"
-output: ioslides_presentation
+output: 
+  ioslides_presentation:
+          css: pres.css
 ---
 
 ```{r setup, include=FALSE}
@@ -10,24 +12,19 @@ knitr::opts_chunk$set(echo = FALSE)
 library(ggplot2)
 ```
 
-## Glitters Diamond Brokerage (GDB) presents GlitterApp
+## Glitters Diamond Brokerage (GDB) presents <span style="font-weight:bold; color:#12809E">GlitterApp</span>
 
-GlitterApp calculates a minimum price that will be accepted by GDB given 
+GlitterApp calculates a minimum price that will be paid by GDB given Carat, Cut, Colour and Clarity.
 
-- Carat
-- Cut
-- Colour
-- Clarity
+### How does <span style="font-weight:bold; color:#12809E">GlitterApp</span> work?
 
-## How does GlitterApp work?
-
-- Enter carat, cut, colour and clarity
+- Enter carat, cut, colour and clarity in the form provided
 - Send resulting price to the email address provided
-- A represntative of GDB will contact you to make arrangements to authenticate the stone
-- Once authenticated, payment guaranteed in 24 hours
+- A representative of GDB will contact you to make arrangements to authenticate the stone
+- Once authenticated, payment is guaranteed in 24 hours
 
 
-## Advantages of using GlitterApp
+## Advantages of using <span style="font-weight:bold; color:#12809E">GlitterApp</span>
 
 - Quickly get the price you will be offered with no waiting or delays
 - Price provided is the minumum price guaranteed
@@ -37,11 +34,12 @@ GlitterApp calculates a minimum price that will be accepted by GDB given
 
 ## Information to be entered
 
+<font size="4">
 **Carat**  
 The minimum carats that can be entered is `r min(diamonds$carat)` and the maximum is `r max(diamonds$carat)`
 
 **Cut**  
-The Cut values are `r unique(diamonds$cut)` where Ideal is the best and Fair is the worst.
+The Cut values that can be entered are `r unique(diamonds$cut)` where Ideal is the best and Fair is the worst.
 
 **Colour**  
 Colours range from `r unique(diamonds[order(diamonds$color), ]$color)` where
@@ -50,9 +48,12 @@ Colours range from `r unique(diamonds[order(diamonds$color), ]$color)` where
 - G, H, I are J are *near colourless* with J being the worst 
 
 **Clarity**  
-Clarity takes the values `r unique(diamonds$clarity)`
+Clarity takes the values `r levels(diamonds$clarity)` where I1 is the worst and IF the best.
+</font>
 
+<font size="2">Note that R expressions were used to retrieve the values for caret, cut, color and clarity for this slide.  Check the Rmd file in the github repo for code.</font>
 
-
-## Where to find GlitterApp
+## Where to find <span style="font-weight:bold; color:#12809E">GlitterApp</span>
 Link to GlitterApp: www.glitters.com/GlitterApp
+
+Hope to hear from you soon!!

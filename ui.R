@@ -9,8 +9,12 @@ library(shiny)
 # Define UI for application that predicts diamond prices
 shinyUI(fluidPage(
 
+    tags$head(
+        tags$link(rel = "stylesheet", type = "text/css", href = "appstyles.css")
+    ),
+    
     # Application title
-    titlePanel("Glitters Diamond Brokerage GlitterApp"),
+    titlePanel("Glitters Diamond Brokerage - GlitterApp"),
 
     # Sidebar with a inputs
     sidebarLayout(
@@ -25,25 +29,75 @@ shinyUI(fluidPage(
 
         # Show inputs and predicted price
         mainPanel(
+          
             
-            br(),
-            p("GlitterApp provides you with the minimum price for which the Glitters Diamond Brokerage company will
-              purchase your diamonds. Simply follow the instructions provided below to get a price."),
+            div("GlitterApp provides you with the minimum price for which the Glitters Diamond Brokerage company will
+              purchase your diamonds. Simply follow the instructions provided below to get a price.", class="alert alert-info"),
+
+            tags$ul(
+                class="list-group",
+                tagList(
+                  tags$li("You have entered:", class="list-group-item active"),    
+                  tags$li(
+                      div(class="item",
+                        div(
+                            class="item-left",
+                            h4("CARATS", class="item-head"),
+                            p(class="item-note", "Use the slider to select the weight of your diamond. The minimum value accepted is 0.2 and the maximum is 5.01"),
+                        ), 
+                        div(
+                            class="item-right",
+                            div(class="item-value-head", "Your Selection"),
+                            textOutput("carat")
+                        ), 
+                      ),
+                      class="list-group-item"),
+                  tags$li(
+                      div(class="item",
+                          div(
+                              class="item-left",
+                              h4("CUT ", class="item-head"),
+                              p(class="item-note", "Select the cut of the diamond which can be Ideal, Premium, Very Good, Good or Fair"),
+                          ), 
+                          div(
+                              class="item-right",
+                              div(class="item-value-head", "Your Selection"),
+                              textOutput("cut")
+                          ), 
+                      ),
+                      class="list-group-item"),
+                  tags$li(
+                      div(class="item",
+                          div(
+                              class="item-left",
+                              h4("COLOUR", class="item-head"),
+                              p(class="item-note", "Select the colour of your diamond which can take values from D (best) to J (worst)"),
+                          ), 
+                          div(
+                              class="item-right",
+                              div(class="item-value-head", "Your Selection"),
+                              textOutput("colour")
+                          ), 
+                      ),
+                      class="list-group-item"),
+                  tags$li(
+                      div(class="item",
+                          div(
+                              class="item-left",
+                              h4("CLARITY", class="item-head"),
+                              p(class="item-note", "Select one of the following:"),
+                          ), 
+                          div(
+                              class="item-right",
+                              div(class="item-value-head", "Your Selection"),
+                              textOutput("clarity")
+                          ), 
+                      ),
+                      class="list-group-item"),
+                )
+            ),
             
-            
-            p("In the form on the left of this page, enter the following:"),
-            p("CARAT: Use the slider to select the weight of your diamond. The minimum value accepted is 0.2 and the maximum is 5.01"),
-            p("CUT: Select the cut of the diamond which can be Ideal, Premium, Very Good, Good or Fair"),        
-            p("COLOUR: Select the colour of your diamond which can take values from D (best) to J (worst)"),
-            p("CLARITY: Select one of the following:"), 
-            p("Click Submit"),br(),
-            
-            strong("You have entered:"), br(),
-            h4("CARATS: "), textOutput("carat"),
-            h4("CUT: "), textOutput("cut"),
-            h4("COLOUR: "), textOutput("colour"),
-            h4("CLARITY: "), textOutput("clarity"),
-            span(h3("Minimum Price we will pay: "), textOutput("predPrice"), style = "color:blue")
+            div(h3("Minimum Price we will pay: $"), textOutput("predPrice"),  class="alert alert-success results")
             
         )
     )
