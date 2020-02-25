@@ -3,6 +3,7 @@
 #
 
 library(shiny)
+library(ggplot2)
 
 # Define server logic required to predict diamond price
     shinyServer(function(input, output) {

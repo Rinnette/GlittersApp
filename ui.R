@@ -43,11 +43,11 @@ shinyUI(fluidPage(
                         div(
                             class="item-left",
                             h4("CARATS", class="item-head"),
-                            p(class="item-note", "Use the slider to select the weight of your diamond. The minimum value accepted is 0.2 and the maximum is 5.01"),
+                            p(class="item-note", "Use the slider to select the weight of your diamond. The minimum value accepted is 0.2 and the maximum is 5.01."),
                         ), 
                         div(
                             class="item-right",
-                            div(class="item-value-head", "Your Selection"),
+                            div(class="item-value-head", "Your Selection:"),
                             textOutput("carat")
                         ), 
                       ),
@@ -57,11 +57,11 @@ shinyUI(fluidPage(
                           div(
                               class="item-left",
                               h4("CUT ", class="item-head"),
-                              p(class="item-note", "Select the cut of the diamond which can be Ideal, Premium, Very Good, Good or Fair"),
+                              p(class="item-note", "Select the cut of the diamond which can be Ideal, Premium, Very Good, Good or Fair."),
                           ), 
                           div(
                               class="item-right",
-                              div(class="item-value-head", "Your Selection"),
+                              div(class="item-value-head", "Your Selection:"),
                               textOutput("cut")
                           ), 
                       ),
@@ -71,11 +71,11 @@ shinyUI(fluidPage(
                           div(
                               class="item-left",
                               h4("COLOUR", class="item-head"),
-                              p(class="item-note", "Select the colour of your diamond which can take values from D (best) to J (worst)"),
+                              p(class="item-note", "Select the colour of your diamond which can take values from D (best) to J (worst)."),
                           ), 
                           div(
                               class="item-right",
-                              div(class="item-value-head", "Your Selection"),
+                              div(class="item-value-head", "Your Selection:"),
                               textOutput("colour")
                           ), 
                       ),
@@ -85,11 +85,12 @@ shinyUI(fluidPage(
                           div(
                               class="item-left",
                               h4("CLARITY", class="item-head"),
-                              p(class="item-note", "Select one of the following:"),
+                              p(class="item-note", "Select clarity which can be one of the following: IF (internally flawless - BEST), VVS1 (very, very slightly included),
+                                                    VVS2, VS1 (very slightly included), VS2, SI1 (slightly included), SI2, I1 (included - WORST))"),
                           ), 
                           div(
                               class="item-right",
-                              div(class="item-value-head", "Your Selection"),
+                              div(class="item-value-head", "Your Selection:"),
                               textOutput("clarity")
                           ), 
                       ),

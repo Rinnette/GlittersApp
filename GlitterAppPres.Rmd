@@ -14,12 +14,12 @@ library(ggplot2)
 
 ## Glitters Diamond Brokerage (GDB) presents <span style="font-weight:bold; color:#12809E">GlitterApp</span>
 
-GlitterApp calculates a minimum price that will be paid by GDB given Carat, Cut, Colour and Clarity.
+GlitterApp calculates a minimum price that will be paid by GDB, for any diamond, given Carat, Cut, Colour and Clarity.
 
 ### How does <span style="font-weight:bold; color:#12809E">GlitterApp</span> work?
 
 - Enter carat, cut, colour and clarity in the form provided
-- Send resulting price to the email address provided
+- Send a printscreen of the resulting price to the email address provided
 - A representative of GDB will contact you to make arrangements to authenticate the stone
 - Once authenticated, payment is guaranteed in 24 hours
 
@@ -30,6 +30,7 @@ GlitterApp calculates a minimum price that will be paid by GDB given Carat, Cut,
 - Price provided is the minumum price guaranteed
 - Prices are negotiable
 - Payment is made within 24 hours of the stone being authenticated
+- GDB has 35 convenient locations
 
 
 ## Information to be entered
@@ -54,6 +55,6 @@ Clarity takes the values `r levels(diamonds$clarity)` where I1 is the worst and 
 <font size="2">Note that R expressions were used to retrieve the values for caret, cut, color and clarity for this slide.  Check the Rmd file in the github repo for code.</font>
 
 ## Where to find <span style="font-weight:bold; color:#12809E">GlitterApp</span>
-Link to GlitterApp: www.glitters.com/GlitterApp
+Link to GlitterApp: <a href="https://niala.shinyapps.io/GlitterApp/">www.glitters.com/GlitterApp</a>
 
-Hope to hear from you soon!!
+Hope to hear from you soon!

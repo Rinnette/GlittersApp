@@ -39,6 +39,7 @@
 .item-right > .shiny-text-output {
   font-size: 3rem;
   font-weight: bold;
+  text-align: center;
   color: blue;
   display: flex;
   justify-content: center;
